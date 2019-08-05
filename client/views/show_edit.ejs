@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>EDIT</title>
+</head>
+<body>
+<!--CONTAINER FOR PAGE-->
+<div class="container">
+
+
+<!-- HEAD SECTION -->
+<!-- contains navigation links and (potentially search bar) -->
+    <div class="headbox">
+        <a class="a"  href='/'>HOME</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/new'>INSERT</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/show_one/:id'>SHOW ONE</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/show_edit/:id'>EDIT</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/delete/:id'>DELETE</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/'>SHOW ALL</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/logout'>LOG OUT</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/login'>LOGIN</a>&nbsp;&nbsp;&nbsp;
+
+    </div>
+<!-- END OF HEAD SECTION-->
+
+
+<!-- BEGIN DASHBOX-->
+
+    <div class="dashbox">
+
+    <h1>HERE IS THE DASHBOX</h1>
+    
+    </div>
+
+<!-- END DASHBOX -->
+
+<!-- BEGIN MAIN BOX HERE -->
+<div class="main">
+
+<!-- BEGIN FORM BOX -->
+
+<div class ="show_form_box">
+
+<h1>EDIT YOUR ANIMAL HERE</h1>
+
+<form method='post' action='/edit'>
+    <h1>Name:<input class="input" type='text' placeholder="name" name='name'></h1>
+    <h1>Type:<input class="input" type='text' placeholder="type" name='type'></h1>
+    <h1>Personality:<input class="input:" type='text' placeholder="personality" name='personality'></h1>
+    <h1><input class="BTN" type="submit"  value="submit"></h1>
+</form>
+
+
+</div>
+<!-- END FORM BOX -->
+
+
+<!-- BEGIN SHOW ONE BOX HERE -->
+<div class="show_one_box">
+<h1>SHOW UPDATE HERE</h1> 
+
+   <br><h2>Here are Animal Stats:</h2>
+    
+        <h3>ID:<%= show_animals._id %></h3>
+        <h3>Name: <%= show_animals.name %></h3>
+        <h4>Type: <%= show_animals.type %></h4>
+        <h4>Personality: <%= show_animals.personality %></h4>
+        <hr>
+    
+</div>
+<!-- END SHOW ONE BOX -->
+
+</div>
+<!-- END MAIN BOX Here -->
+
+<!-- BEGIN FOOTER HERE -->
+<div class="foot">
+
+
+</div>
+<!-- END FOOTER HERE -->
+
+</div>
+<!-- END CONTAINER HERE -->
+    
+</body>
+</html>

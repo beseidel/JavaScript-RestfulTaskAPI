@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--CONTAINER FOR PAGE-->
+<div class="container">
+
+
+<!-- HEAD SECTION -->
+<!-- contains navigation links and (potentially search bar) -->
+    <div class="headbox">
+        <a class="a"  href='/'>HOME</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/new'>INSERT</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/show_one/:id'>SHOW ONE</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/show_edit/:id'>EDIT</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/delete/:id'>DELETE</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/'>SHOW ALL</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/logout'>LOG OUT</a>&nbsp;&nbsp;&nbsp;
+        <a class="a"  href='/login'>LOGIN</a>&nbsp;&nbsp;&nbsp;
+
+        <br></br>
+    </div>
+<!-- END OF HEAD SECTION-->
+
+
+<!-- BEGIN DASHBOX-->
+
+    <div class="dashbox">
+
+    <h1>Welcome to the Mongoose Dashboard</h1>
+    
+    </div>
+
+<!-- END DASHBOX -->
+
+<!-- BEGIN SHOW ALL BOX -->
+<div class="show_all_box">
+<h1>SHOW All ANIMALS</h1>
+
+<%=show_animals%>
+<br>
+<br>
+<table>
+<tr>
+    <th>ID</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NAME</th><th>&nbsp;&nbsp;&nbsp;TYPE&nbsp;&nbsp;</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PERSONALITY&nbsp;&nbsp;&nbsp;</td><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th>ACTION</th>
+</tr>
+
+<tr> <% for (var x in show_animals) { %> </tr>
+    <td><h3><a class="a" href='show_one/animalID'</a><td>
+    <td><h3><%= show_animals[x].name %></h3></td>
+    <td><h3><%= show_animals[x].type %></h3></td>
+    <td><h3><%= show_animals[x].personality %></h3>&nbsp;&nbsp;</td>
+    <td><p><a class="a" href='/show_one/<%= show_animals[x]._id %>'>SHOW&nbsp;</a></p></td>
+    <td><p><a class="a" href='/show_edit/<%= show_animals[x]._id %>'>EDIT&nbsp;</a></p></td>
+    <td><p><a class="a" href='/delete/<%= show_animals[x]._id %>'>DELETE&nbsp;</a></p><td>
+</tr>
+ <% } %>
+
+</table>
+</div>
+<!-- END SHOW ALL BOX -->
+
+
+<!-- BEGIN SHOW ONE BOX -->
+<div class="show_all_box">
+<h1>show the all the animals here</h1> 
+
+   <br><h2>Here are the Animals:</h2>
+    <% for (var x in show_animals) { %>
+        <br>
+        <h4>ID: <%= show_animals[x]._id %></h4>
+        <h4>Name: <%= show_animals[x].name %></h4>
+        <h4>Type: <%= show_animals[x].type %></h4>
+        <h4>Personality: <%= show_animals[x].personality %></h4>
+        <hr>
+        <br>
+    <% } %>
+
+</div>
+<!-- END SHOW ONE BOX -->
+
+<!-- BEGIN FOOTER -->
+<div class="foot">
+
+</div>
+
+<!-- END FOOTER -->
+
+</div>
+<!-- END CONTAINER BOX -->
+
+</body>
+</html>
